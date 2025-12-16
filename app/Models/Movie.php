@@ -12,7 +12,7 @@ class Movie extends Model
 
     public function genres()
     {
-        return $this->belongsToMany(Genre::class);
+        return $this->belongsToMany(Genre::class, 'movie_genre');
     }
 
     public function ratings()
@@ -24,4 +24,5 @@ class Movie extends Model
     {
         return $this->ratings()->avg('rating');
     }
+
 }
